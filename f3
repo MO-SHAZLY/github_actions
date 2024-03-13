@@ -1,0 +1,20 @@
+name: my first workflow
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+
+            - name: print , list, read
+              run:
+                | 
+                 echo "this is my first wf"
+                 ls
+                 cat README.md
+             
+            - name:
+              run: cowsay -f dragon "Run for cover, iam a Dragon....RAWR" >> dragon.txt
