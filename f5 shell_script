@@ -1,0 +1,26 @@
+name: my first workflow | shell script
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+
+            - name: print , list, read
+              run:
+                | 
+                 echo "this is my first wf"
+                 ls
+                 cat README.md
+            
+            - name: run shell script
+              run:
+                |
+                chmod +x ascii-script.sh
+                ./ascii-script.sh
+
+            - name: list files
+              run:  ls -ltra
